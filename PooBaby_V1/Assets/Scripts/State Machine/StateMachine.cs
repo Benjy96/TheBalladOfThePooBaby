@@ -44,7 +44,7 @@ public class State
     [Header("These are NOT saved in inspector. Experiment here, edit in script")]
     [Range(0f, 10f)] public float accelTimeJumpOffWall = .2f;
     [Range(0f, 10f)] public float accelTimeGrounded = .1f;
-    public float moveSpeed = 6;
+    protected float moveSpeed = 6;
 
     //Use to calculate gravity
     protected float maxJumpHeight = 4;
@@ -59,7 +59,7 @@ public class State
     /// <summary>
     /// Create and return an initialized state
     /// </summary>
-    public State Enter(Player owner)
+    public virtual State Enter(Player owner)
     {
         this.owner = owner;
         controller = owner.controller;
@@ -78,6 +78,8 @@ public class State
     public virtual void Execute()
     {
         CalculateVelocity();
+
+        Debug.Log(moveSpeed);
     }
 
     public virtual void OnJumpInputDown()
