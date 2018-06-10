@@ -44,7 +44,7 @@ public class State
     [Header("These are NOT saved in inspector. Experiment here, edit in script")]
     [Range(0f, 10f)] public float accelTimeJumpOffWall = .2f;
     [Range(0f, 10f)] public float accelTimeGrounded = .1f;
-    protected float moveSpeed = 6;
+    public float moveSpeed = 6;
 
     //Use to calculate gravity
     protected float maxJumpHeight = 4;
